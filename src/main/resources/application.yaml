@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: demo
+
+END_POINT_URL:
+  BANK_LIST_FOR_SWIFT: http://10.254.253.6:7005/STAFFAPP/api/v1.0.0/party/get/rd/central/bank
+  PRODUCT_LIST: http://10.254.253.6:7005/SbilhMb/api/v1.0.0/order/sbilh/mb/casadeposit?depositType=S
