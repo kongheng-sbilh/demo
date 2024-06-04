@@ -5,6 +5,6 @@ import com.kh.demo.model.response.ProductResponse;
 
 public interface ProductService {
 
-    ProductResponse getProducts() throws RestClientCustomException;
+    ProductResponse getProductList() throws RestClientCustomException;
 
 }

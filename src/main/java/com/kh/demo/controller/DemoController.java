@@ -20,14 +20,19 @@ public class DemoController {
     @Autowired
     private BankService bankService;
 
-    @GetMapping("/banks")
-    public BankResponse getBanks() throws RestClientCustomException {
-        return bankService.getBanks();
+    @GetMapping("/bank_list_for_swift")
+    public BankResponse getBankListForSWIFT() throws RestClientCustomException {
+        return bankService.getBankListForSWIFT();
+    }
+
+    @GetMapping("/bank_list_for_ncs")
+    public BankResponse getBankListForNcS() throws RestClientCustomException {
+        return bankService.getBankListForNCS();
     }
 
     @GetMapping("/products")
-    public ProductResponse getProducts() throws RestClientCustomException {
-        return productService.getProducts();
+    public ProductResponse getProductList() throws RestClientCustomException {
+        return productService.getProductList();
     }
 
 }

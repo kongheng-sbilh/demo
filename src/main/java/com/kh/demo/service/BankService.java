@@ -5,6 +5,8 @@ import com.kh.demo.model.response.BankResponse;
 
 public interface BankService {
 
-    BankResponse getBanks() throws RestClientCustomException;
+    BankResponse getBankListForSWIFT() throws RestClientCustomException;
+
+    BankResponse getBankListForNCS() throws RestClientCustomException;
 
 }
