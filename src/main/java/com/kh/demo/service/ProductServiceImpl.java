@@ -19,7 +19,7 @@ public class ProductServiceImpl implements ProductService {
     private RestTemplate restTemplate;
 
     @Override
-    public ProductResponse getProducts() throws RestClientCustomException {
+    public ProductResponse getProductList() throws RestClientCustomException {
         try {
             return restTemplate.getForObject(PRODUCT_LIST, ProductResponse.class);
         } catch (Exception exception) {

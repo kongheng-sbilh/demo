@@ -15,15 +15,28 @@ public class BankServiceImpl implements BankService {
     @Value("${END_POINT_URL.BANK_LIST_FOR_SWIFT}")
     private String BANK_LIST_FOR_SWIFT;
 
+    @Value("${END_POINT_URL.BANK_LIST_FOR_NCF}")
+    private String BANK_LIST_FOR_NCF;
+
     @Autowired
     private RestTemplate restTemplate;
 
     @Override
-    public BankResponse getBanks() throws RestClientCustomException {
+    public BankResponse getBankListForSWIFT() throws RestClientCustomException {
         try {
             return restTemplate.getForObject(BANK_LIST_FOR_SWIFT, BankResponse.class);
         } catch (Exception exception) {
             log.error("method: getBanks(); error: ", exception);
+            throw new RestClientCustomException(exception);
+        }
+    }
+
+    @Override
+    public BankResponse getBankListForNCS() throws RestClientCustomException {
+        try {
+            return restTemplate.getForObject(BANK_LIST_FOR_NCF, BankResponse.class);
+        } catch (Exception exception) {
+            log.error("method: getBankListForNCS(); error: ", exception);
             throw new RestClientCustomException(exception);
         }
     }
